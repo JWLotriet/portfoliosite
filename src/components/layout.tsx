@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          subTitle
         }
       }
     }
@@ -25,22 +26,15 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header
+      {/* <Header
         siteTitle={data.site.siteMetadata?.title || `John-William Lotriet`}
-      />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+        subTitle={
+          data.site.siteMetadata?.subTitle || `Full Stack React Developer`
+        }
+      /> */}
+      <div>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
+        <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
