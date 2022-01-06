@@ -1,6 +1,7 @@
 import React from "react"
 import { classNames } from "../../utils/class-names"
 import { Color } from "../../common/types"
+import { api } from "./Hero.api"
 
 export interface HeroProps {
   /** Headline of the Hero */
@@ -68,7 +69,7 @@ const Hero: React.FC<HeroProps> = ({
           {content && (
             <div
               className={
-                "mt-6 mx-auto text-center text-xl text-white opacity-80"
+                "mt-10 mx-auto text-center text-4xl text-white opacity-80"
               }
             >
               {content}
@@ -87,10 +88,6 @@ Hero.defaultProps = {
   // The Gray default prop is to provide the default color overlay for when an image is added
 
   color: Color.BLACK,
-  headline: "Hi, I'm John,",
-  content: (
-    <p>
-      a Full Stack <span className="text-blue">React</span> Developer
-    </p>
-  ),
+  headline: api.headline,
+  content: api.children,
 }
